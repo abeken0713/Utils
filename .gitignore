@@ -1,0 +1,8 @@
+# 重いデータはgit管理しない
+MachineLearning/Data/
+
+# テスト用のJupyter Notebookも管理しない
+JunkJupyter
+
+# 中間ファイルは管理しない
+*.pyc
