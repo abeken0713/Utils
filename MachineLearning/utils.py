@@ -12,6 +12,13 @@ def checkAndMakeDir(dirpath):
     return flag
 
 def splitbatch(data, batch_size=None, n_batch=None, shuffle=False, seed=None):
+    """
+    [Arguments]
+    - data: (tuple of) numpy.ndarray; shape should be identical
+    - batch_size or n_batch: int; if both given, n_batch will be computed depending on batch_size
+    - shuffle: boolean; if True, order of the first dimension will be shuffled (default False)
+    - seed: int; random seed for shuffling
+    """
     if (batch_size is None or type(batch_size) is not int) and (n_batch is None or type(n_batch) is not int):
         raise AttributeError("`batch_size` or `n_batch` should be int")
     if type(data) is np.ndarray:

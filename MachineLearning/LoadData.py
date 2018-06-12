@@ -6,6 +6,13 @@ from sklearn.datasets import fetch_mldata
 from .utils import splitbatch
 
 def load_mnist(dirpath="./Data/mnist", seed=1234):
+    """
+    [Outputs]
+    - train_data: 60000 x 784 (= 28 x 28)
+    - test_data: 10000 x 784 (= 28 x 28)
+    - train_label: 60000
+    - test_label: 10000
+    """
     mypath = Path(__file__).absolute()
     dirpath = mypath.parent / dirpath
     mnist = fetch_mldata("MNIST original", data_home=str(dirpath))
