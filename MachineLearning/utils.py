@@ -2,15 +2,6 @@ import numpy as np
 from pathlib import Path
 import os
 
-def checkPath(path):
-    return path.exists()
-
-def checkAndMakeDir(dirpath):
-    flag = checkPath(dirpath)
-    if not flag:
-        dirpath.mkdir()
-    return flag
-
 def splitbatch(data, batch_size=None, n_batch=None, shuffle=False, seed=None):
     """
     [Arguments]
@@ -40,7 +31,3 @@ def splitbatch(data, batch_size=None, n_batch=None, shuffle=False, seed=None):
             end = None
         idx = idx_list[start:end]
         yield list(map(lambda d: d[idx], data))
-
-
-
-
